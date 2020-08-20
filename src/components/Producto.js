@@ -1,14 +1,16 @@
 import React from 'react';
 import '../css/index.css';
 
-const Producto = () => {
+const Producto = ({ producto }) => {
 
+    const { nombre, precio } = producto;
+    console.log(producto);
     return ( 
         
         <div className= "contenedorProducto">
-            <tr>
-                <td>Nombre</td>
-                <td><span>Precio</span></td>
+            <td>
+                <td>{nombre}</td>
+                <td><span>$ {precio}</span></td>
                 <td className= "acciones">
                     <button
                         type= "button"
@@ -17,7 +19,7 @@ const Producto = () => {
                         type= "button"
                     >Eliminar</button>
                 </td>
-            </tr>
+            </td>
         </div>
      );
 }

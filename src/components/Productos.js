@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Producto from './Producto';
 import '../css/index.css';
-import styled from 'styled-components';
+
+//!Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { descargaProductosAction } from '../actions/productoActions';
 
 const Productos = () => {
+
+    const dispatch = useDispatch();
+    
+    useEffect(()=>{
+        const descargaProductos = () => dispatch( descargaProductosAction() );
+        descargaProductos();
+        // eslint-disable-next-line
+    },[])
+
+    //!Obtenemos los datos del state (productos)
+    //!Como es un array se debe recorrer para poder mostrar
+    const productos = useSelector( state => state.productos.productos); 
 
     return ( 
         <div className= "contenedorProductos">
@@ -19,7 +34,14 @@ const Productos = () => {
                     </tr>
                 </thead>
                 <tbody className= "tablaBody">
-                    Productos aca!
+                    { productos.length === 0 ? 'No hay productos para mostrar' : (
+                        productos.map( producto => (
+                            <Producto
+                                key= {producto.id}
+                                producto= {producto}
+                            />
+                        ))
+                    ) }
                 </tbody>
             </table>
         </div>

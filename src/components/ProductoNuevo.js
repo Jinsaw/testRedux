@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
+import { crearNuevoProductoAction } from '../actions/productoActions';
 
+//!Redux
+import { useDispatch, useSelector } from 'react-redux';
 const ProductoNuevo = () => {
 
     const [ nombre, guardarNombre ] = useState('');
     const [ precio, guardarPrecio ] = useState(0);
 
-   
+    //! Nos permite mandar a llamar las funciones(acciones) que tengamos en el Action.
+    const dispatch = useDispatch();
+    
+    //!Funcion que ejecuta el dispatch para mandar a llamar la funcion del Action.
+    const agregarProducto = (producto) => dispatch(crearNuevoProductoAction(producto));
 
     const submitNuevoProducto = (e) => {
         e.preventDefault();
-        
+        agregarProducto({
+            nombre,
+            precio
+        });
     }
     
     return ( 

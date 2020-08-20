@@ -1,5 +1,4 @@
 import {
-    COMENZAR_DESCARGA_PRODUCTOS,
     AGREGAR_PRODUCTO_EXITO,
     AGREGAR_PRODUCTO_ERROR,
     DESCARGAR_PRODUCTO_EXITO,
@@ -24,6 +23,16 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch(action.type) {
+        case DESCARGAR_PRODUCTO_EXITO:
+            return {
+                ...state,
+                productos: action.payload
+            }
+        case AGREGAR_PRODUCTO_EXITO:
+            return {
+                ...state,
+                productos: [...state.productos, action.payload]
+            }
         default:
             return state;
     }

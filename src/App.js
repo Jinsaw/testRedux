@@ -15,20 +15,16 @@ import store from './store';
 
 const App = () => {
 
-	const ContenedorPrincipal = styled.div`
-		max-width: 1440px;
-	`;
-	
 	return (
 		<Router>
 			<Provider store= {store}>
 				<Header/>
-				<ContenedorPrincipal>
+				<div>
 					<Switch>
 						<Route exact path = "/" component= {Productos} />
 						<Route exact path = "/productos/nuevo" component= {ProductoNuevo} />
 					</Switch>
-				</ContenedorPrincipal>
+				</div>
 			</Provider>
 		</Router>
 	);
