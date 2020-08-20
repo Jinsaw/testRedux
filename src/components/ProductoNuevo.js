@@ -1,0 +1,54 @@
+import React, { useState } from 'react';
+
+const ProductoNuevo = () => {
+
+    const [ nombre, guardarNombre ] = useState('');
+    const [ precio, guardarPrecio ] = useState(0);
+
+   
+
+    const submitNuevoProducto = (e) => {
+        e.preventDefault();
+        
+    }
+    
+    return ( 
+        <div className= "contenedorPrincipal">
+            <h1>Agregar productos</h1>
+            <form
+                className= "formulario"
+                onSubmit= { submitNuevoProducto }
+            >
+                <div className= "contenedorSecundario">
+                    <label>Nombre del producto</label>
+                   
+                    <input
+                        type= "text"
+                        name= "nombre"
+                        value= {nombre}
+                        onChange= {e => guardarNombre(e.target.value)}
+                        placeholder= "Ingresa el nombre del producto"
+                    />
+                </div>
+                <div className= "contenedorSecundario">
+                    <label>Precio</label>
+                   
+                    <input
+                        type= "number"
+                        name= "precio"
+                        value= {precio}
+                        onChange= {e => guardarPrecio( Number(e.target.value) )}
+                        min= "0"
+                        placeholder= "Ingrese el precio del artículo"
+                    />
+                </div>
+                <button
+                    className= "agregarProducto"
+                    type= "submit"
+                >Agregar</button>
+            </form>
+        </div>
+     );
+}
+ 
+export default ProductoNuevo;

@@ -1,0 +1,119 @@
+.header {
+    width: auto;
+    max-width: 1440px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #15cf59;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.header h1 {
+    flex: 0.8;
+    color: #4925cc;
+    text-decoration: none;
+    margin: 0 100px 0 0;
+}
+
+.buscador {
+    width: 30%;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    flex: 0.7;
+}
+
+.agregarProductos {
+    border: none;
+    border-radius: 3px;
+    background-color: #f10000 ;
+    color: #fcfcfc;
+    padding: 10px;
+    margin: 0 0 0 100px;
+    flex: 0.8;
+}
+
+.agregarProductos:hover{
+    background-color: #d90000;
+}
+
+.contenedorPrincipal{
+    max-width: 1440px;
+    width: auto;
+}
+
+.contenedorPrincipal h1 {
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    color: #4925cc;
+}
+
+.formulario {
+    text-align: center;
+}
+
+.contenedorSecundario {
+    padding: 10px;
+    margin: 0 auto;
+    width: 60%;
+    /* background-color: #c10000; */
+}
+
+.contenedorSecundario label {
+    color: #3f3844;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contenedorSecundario input {
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 5px;
+    width: 50%;
+    border: 1px solid;
+}
+
+.agregarProducto {
+    border: none;
+    border-radius: 3px;
+    background-color: #15cf59 ;
+    color: #fcfcfc;
+    padding: 6px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.agregarProducto:hover {
+    background-color: #28bc5e;
+}
+
+.tabla {
+    background-color: #28bc5e;
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.tablaHead {
+    background-color: #15cf59;
+    line-height: 2.5;
+    text-align: center;
+}
+
+.contenedorProductos {
+    max-width: 1440px;
+    width: 90%;
+    margin: auto;
+}
+
+.contenedorTitulo {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: small;
+    color: #4925cc;
+}
