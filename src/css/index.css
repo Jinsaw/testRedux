@@ -86,6 +86,7 @@
     padding: 6px;
     width: 100px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .agregarProducto:hover {
@@ -159,5 +160,14 @@ tr > td > span {
 
 .btn-eliminar:hover {
     background-color: #cc3700 ;
+}
+
+.msg-alerta {
+    text-transform: uppercase;
+    background-color: #f10000;
+    padding: 10px;
+    border-radius: 6px;
+    width: 50%;
+    margin: 0 auto;
 }
 

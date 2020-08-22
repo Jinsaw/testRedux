@@ -1,44 +1,24 @@
 {
   "productos": [
     {
-      "nombre": "Oriana",
-      "precio": 200,
-      "id": 38
+      "nombre": "Tempera",
+      "precio": 120,
+      "id": 21
     },
     {
-      "nombre": "Arroz con pollo",
-      "precio": 100,
-      "id": 39
+      "nombre": "Acrilicos",
+      "precio": 25,
+      "id": 22
     },
     {
-      "nombre": "Arroz con pollo",
-      "precio": 100,
-      "id": 40
+      "nombre": "Jamon",
+      "precio": 125,
+      "id": 23
     },
     {
-      "nombre": "Pollo con arroz",
-      "precio": 250,
-      "id": 41
-    },
-    {
-      "nombre": "Pizza con pollo",
-      "precio": 130,
-      "id": 42
-    },
-    {
-      "nombre": "awdae",
-      "precio": 12,
-      "id": 43
-    },
-    {
-      "nombre": "Pasticho",
-      "precio": 500,
-      "id": 44
-    },
-    {
-      "nombre": "awdaw",
-      "precio": 213,
-      "id": 45
+      "nombre": "wqeqw",
+      "precio": 0,
+      "id": 24
     }
   ]
 }

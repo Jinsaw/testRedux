@@ -13,6 +13,7 @@ import {
     MOSTRAR_ALERTA,
     OCULTAR_ALERTA
 } from '../types/';
+import Swal from 'sweetalert2';
 import clienteAxios from '../config/axios';
 
 
@@ -41,8 +42,18 @@ export function crearNuevoProductoAction(producto) {
             await clienteAxios.post('/productos', producto);
             //Si se agrega el producto
             dispatch( addProductoExito(producto) );
+            Swal.fire(
+                'Correcto', 
+                'El producto se agregó correctamente',
+                'success'
+            );
         } catch (error) {
             console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Hubo un error',
+                text: 'Hubo un error, intenta de nuevo'
+            })
         }
     }
 }
@@ -92,6 +103,12 @@ export const obtenerProductoActionEliminar = (id) => {
             await clienteAxios.delete(`/productos/${id}`);
             //Si se elimina el producto
             dispatch( eliminarProductoExito() );
+
+            Swal.fire(
+                'Eliminado',
+                'El producto se eliminó correctamente',
+                'success'
+            )
         } catch (error) {
             console.log(error);
         }

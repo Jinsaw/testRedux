@@ -45,7 +45,7 @@ const Productos = () => {
                 </tbody>
             </table>
         </div>
-     );
+    );
 }
- 
+
 export default Productos;
