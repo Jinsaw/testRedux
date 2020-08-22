@@ -1,44 +1,44 @@
 {
   "productos": [
     {
-      "nombre": "Manzana",
-      "precio": 121,
-      "id": 13
+      "nombre": "Oriana",
+      "precio": 200,
+      "id": 38
     },
     {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 15
+      "nombre": "Arroz con pollo",
+      "precio": 100,
+      "id": 39
     },
     {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 16
+      "nombre": "Arroz con pollo",
+      "precio": 100,
+      "id": 40
     },
     {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 17
+      "nombre": "Pollo con arroz",
+      "precio": 250,
+      "id": 41
     },
     {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 18
+      "nombre": "Pizza con pollo",
+      "precio": 130,
+      "id": 42
     },
     {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 19
-    },
-    {
-      "nombre": "dvdvq",
+      "nombre": "awdae",
       "precio": 12,
-      "id": 22
+      "id": 43
     },
     {
-      "nombre": "dvdvq",
-      "precio": 12,
-      "id": 23
+      "nombre": "Pasticho",
+      "precio": 500,
+      "id": 44
+    },
+    {
+      "nombre": "awdaw",
+      "precio": 213,
+      "id": 45
     }
   ]
 }

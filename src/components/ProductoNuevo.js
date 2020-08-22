@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { crearNuevoProductoAction } from '../actions/productoActions';
 
 //!Redux
 import { useDispatch } from 'react-redux';
 const ProductoNuevo = () => {
 
+    const history = useHistory();
+    
     const [ nombre, guardarNombre ] = useState('');
     const [ precio, guardarPrecio ] = useState(0);
 
@@ -20,6 +23,7 @@ const ProductoNuevo = () => {
             nombre,
             precio
         });
+        
     }
     
     return ( 
@@ -48,7 +52,6 @@ const ProductoNuevo = () => {
                         name= "precio"
                         value= {precio}
                         onChange= {e => guardarPrecio( Number(e.target.value) )}
-                        min= "0"
                         placeholder= "Ingrese el precio del artículo"
                     />
                 </div>

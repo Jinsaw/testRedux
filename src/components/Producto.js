@@ -20,7 +20,7 @@ const Producto = ({ producto }) => {
 
     const btnEliminarProducto = (producto) => {
         dispatch( obtenerProductoActionEliminar(id) );
-        history.push('/');
+        window.location = '/';
     }
     const { nombre, precio, id } = producto;
 
