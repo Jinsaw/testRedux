@@ -10,8 +10,6 @@ import {
     COMENZAR_EDICION_PRODUCTO,
     PRODUCTO_EDITADO_EXITO,
     PRODUCTO_EDITADO_ERROR,
-    MOSTRAR_ALERTA,
-    OCULTAR_ALERTA
 } from '../types/';
 import Swal from 'sweetalert2';
 import clienteAxios from '../config/axios';
@@ -26,6 +24,7 @@ export function descargaProductosAction(){
             dispatch( descargaProductosExito(respuesta.data) );
         } catch (error) {
             console.log(error);
+            dispatch( descargaProductosError() );
         }
     }
 }
@@ -33,6 +32,10 @@ export function descargaProductosAction(){
 const descargaProductosExito = (productos) => ({
     type: DESCARGAR_PRODUCTO_EXITO,
     payload: productos
+})
+
+const descargaProductosError = () => ({
+    type: DESCARGAR_PRODUCTO_ERROR,
 })
 
 
@@ -49,6 +52,7 @@ export function crearNuevoProductoAction(producto) {
             );
         } catch (error) {
             console.log(error);
+            dispatch( addProductoError() );
             Swal.fire({
                 icon: 'error',
                 title: 'Hubo un error',
@@ -61,6 +65,10 @@ export function crearNuevoProductoAction(producto) {
 const addProductoExito = (producto) => ({
     type: AGREGAR_PRODUCTO_EXITO,
     payload: producto
+})
+
+const addProductoError = () => ({
+    type: AGREGAR_PRODUCTO_ERROR,
 })
 
 export const obtenerProductoActionEditar = (producto) => {
@@ -83,6 +91,7 @@ export const editarProductoAction = (producto) => {
             dispatch( productoEditadoExito(producto) )
         } catch (error) {
             console.log(error);  
+            dispatch( productoEditadoError() );
         }
     }
 }
@@ -94,6 +103,10 @@ const comenzarEdicionProducto = () => ({
 const productoEditadoExito = (producto) => ({
     type: PRODUCTO_EDITADO_EXITO,
     payload: producto
+})
+
+const productoEditadoError = () => ({
+    type: PRODUCTO_EDITADO_ERROR
 })
 
 export const obtenerProductoActionEliminar = (id) => {
@@ -111,6 +124,7 @@ export const obtenerProductoActionEliminar = (id) => {
             )
         } catch (error) {
             console.log(error);
+            dispatch( eliminarProductoError() );
         }
     }
 }
@@ -122,4 +136,8 @@ const obtenerProductoEliminar = (id) => ({
 
 const eliminarProductoExito = () => ({
     type: PRODUCTO_ELIMINADO_EXITO,
+})
+
+const eliminarProductoError = () => ({
+    type: PRODUCTO_ELIMINADO_ERROR
 })

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { crearNuevoProductoAction } from '../actions/productoActions';
 import { mostrarAlertaAction, ocultarAlertaAction } from '../actions/alertaActions';
 
 //!Redux
 import { useDispatch, useSelector } from 'react-redux';
 const ProductoNuevo = () => {
-
-    const history = useHistory();
     
     const [ nombre, guardarNombre ] = useState('');
     const [ precio, guardarPrecio ] = useState(0);
@@ -78,11 +75,11 @@ const ProductoNuevo = () => {
                         placeholder= "Ingrese el precio del artículo"
                     />
                 </div>
-                {alerta ? <p className= {alerta.classes}>{ alerta.msg }</p> : null}
                 <button
                     className= "agregarProducto"
                     type= "submit"
                 >Agregar</button>
+            {alerta ? <p className= {alerta.classes}>{ alerta.msg }</p> : null}
             </form>
         </div>
      );

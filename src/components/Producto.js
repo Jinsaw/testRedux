@@ -9,15 +9,10 @@ import { obtenerProductoActionEditar,
     from '../actions/productoActions';
 import { useHistory } from 'react-router-dom';
 
-const Producto = ({ producto }) => {
+const Producto = ({producto}) => {
 
     const dispatch = useDispatch();
     const history = useHistory();
-
-    const btnEditarProducto = (producto) => {
-        dispatch( obtenerProductoActionEditar(producto) );
-        history.push(`/productos/editar/${producto.id}`);
-    }
 
     const btnEliminarProducto = (producto) => {
 
@@ -35,6 +30,11 @@ const Producto = ({ producto }) => {
                     dispatch( obtenerProductoActionEliminar(id) );
                 }
             })        
+    }
+
+    const btnEditarProducto = (producto) => {
+        dispatch( obtenerProductoActionEditar(producto) );
+        history.push(`/productos/editar/${producto.id}`);
     }
     const { nombre, precio, id } = producto;
 

@@ -6,14 +6,10 @@ import {
     OBTENER_PRODUCTO_EDITAR,
     PRODUCTO_ELIMINADO_EXITO,
     PRODUCTO_ELIMINADO_ERROR,
-    COMENZAR_EDICION_PRODUCTO,
     PRODUCTO_EDITADO_EXITO,
     PRODUCTO_EDITADO_ERROR,
-    MOSTRAR_ALERTA,
-    OCULTAR_ALERTA,
     OBTENER_PRODUCTO_ELIMINAR
 } from '../types/';
-import Producto from '../components/Producto';
 
 const initialState = {
     productos: [],
@@ -28,7 +24,8 @@ export default function(state = initialState, action) {
         case DESCARGAR_PRODUCTO_EXITO:
             return {
                 ...state,
-                productos: action.payload
+                error: null,
+                productos: action.payload,
             }
         case AGREGAR_PRODUCTO_EXITO:
             return {
@@ -38,11 +35,13 @@ export default function(state = initialState, action) {
         case OBTENER_PRODUCTO_EDITAR:
             return {
                 ...state,
+                error: null,
                 productoeditar: action.payload
             }
         case PRODUCTO_EDITADO_EXITO:
             return {
                 ...state,
+                error: null,
                 productoeditar: null,
                 productos: state.productos.map( producto =>
                     producto.id === action.payload.id ? producto = action.payload : producto )
@@ -55,9 +54,19 @@ export default function(state = initialState, action) {
         case PRODUCTO_ELIMINADO_EXITO:
             return {
                 ...state,
+                error: null,
                 productos: state.productos.filter( producto => 
-                    producto.id ==! state.productoeliminar),
+                    producto.id ===! state.productoeliminar),
                 productoeliminar: null
+            }
+        case DESCARGAR_PRODUCTO_ERROR:
+        case AGREGAR_PRODUCTO_ERROR:
+        case PRODUCTO_EDITADO_ERROR:
+        case PRODUCTO_ELIMINADO_ERROR:
+            return {
+                ...state,
+                error: true,
+                payload: action.payload
             }
         default:
             return state;

@@ -165,9 +165,10 @@ tr > td > span {
 .msg-alerta {
     text-transform: uppercase;
     background-color: #f10000;
+    
     padding: 10px;
     border-radius: 6px;
     width: 50%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
