@@ -28,9 +28,9 @@ const Productos = () => {
             <table className= "tabla">
                 <thead className= "tablaHead">
                     <tr>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Acciones</th>
+                        <td>Nombre</td>
+                        <td>Precio</td>
+                        <td>Acciones</td>
                     </tr>
                 </thead>
                 <tbody className= "tablaBody">

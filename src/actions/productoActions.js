@@ -3,17 +3,18 @@ import {
     AGREGAR_PRODUCTO_ERROR,
     DESCARGAR_PRODUCTO_EXITO,
     DESCARGAR_PRODUCTO_ERROR,
-    OBTENER_PRODUCTO_EDITAR,
+    OBTENER_PRODUCTO_ELIMINAR,
     PRODUCTO_ELIMINADO_EXITO,
     PRODUCTO_ELIMINADO_ERROR,
+    OBTENER_PRODUCTO_EDITAR,
     COMENZAR_EDICION_PRODUCTO,
     PRODUCTO_EDITADO_EXITO,
     PRODUCTO_EDITADO_ERROR,
     MOSTRAR_ALERTA,
     OCULTAR_ALERTA
 } from '../types/';
-
 import clienteAxios from '../config/axios';
+
 
 
 export function descargaProductosAction(){
@@ -49,4 +50,59 @@ export function crearNuevoProductoAction(producto) {
 const addProductoExito = (producto) => ({
     type: AGREGAR_PRODUCTO_EXITO,
     payload: producto
+})
+
+export const obtenerProductoActionEditar = (producto) => {
+    return (dispatch) => {
+        dispatch( obtenerProductoEditar(producto) );
+    }
+}
+
+const obtenerProductoEditar = (producto) => ({
+    type: OBTENER_PRODUCTO_EDITAR,
+    payload: producto
+})
+
+export const editarProductoAction = (producto) => {
+    return async( dispatch ) => {
+        dispatch( comenzarEdicionProducto() )
+        try {
+            await clienteAxios.put(`/productos/${producto.id}`, producto);
+            //Si se edita el producto
+            dispatch( productoEditadoExito(producto) )
+        } catch (error) {
+            console.log(error);  
+        }
+    }
+}
+
+const comenzarEdicionProducto = () => ({
+    type: COMENZAR_EDICION_PRODUCTO
+})
+
+const productoEditadoExito = (producto) => ({
+    type: PRODUCTO_EDITADO_EXITO,
+    payload: producto
+})
+
+export const obtenerProductoActionEliminar = (id) => {
+    return async(dispatch) => {
+        dispatch( obtenerProductoEliminar(id) )
+        try {
+            await clienteAxios.delete(`/productos/${id}`);
+            //Si se elimina el producto
+            dispatch( eliminarProductoExito() );
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+const obtenerProductoEliminar = (id) => ({
+    type: OBTENER_PRODUCTO_ELIMINAR,
+    payload: id
+})
+
+const eliminarProductoExito = () => ({
+    type: PRODUCTO_ELIMINADO_EXITO,
 })

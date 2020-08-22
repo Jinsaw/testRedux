@@ -1,79 +1,9 @@
 {
   "productos": [
     {
-      "nombre": "Articulo 1",
-      "precio": 25,
-      "descripcion": "Este es el articulo 1",
-      "id": 1
-    },
-    {
-      "nombre": "Articulo 2",
-      "precio": 25,
-      "descripcion": "Este es el articulo 2",
-      "id": 2
-    },
-    {
-      "nombre": "Articulo 3",
-      "precio": 25,
-      "descripcion": "Este es el articulo 3",
-      "id": 3
-    },
-    {
-      "nombre": "Articulo 4",
-      "precio": 25,
-      "descripcion": "Este es el articulo 4",
-      "id": 4
-    },
-    {
-      "nombre": "Articulo 5",
-      "precio": 25,
-      "descripcion": "Este es el articulo 5",
-      "id": 5
-    },
-    {
-      "nombre": "jamon",
-      "precio": 20,
-      "id": 6
-    },
-    {
-      "nombre": "jamon plumrose",
-      "precio": 20,
-      "id": 7
-    },
-    {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 8
-    },
-    {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 9
-    },
-    {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 10
-    },
-    {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 11
-    },
-    {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 12
-    },
-    {
-      "nombre": "qred",
+      "nombre": "Manzana",
       "precio": 121,
       "id": 13
-    },
-    {
-      "nombre": "qred",
-      "precio": 121,
-      "id": 14
     },
     {
       "nombre": "qred",
@@ -99,6 +29,16 @@
       "nombre": "qred",
       "precio": 121,
       "id": 19
+    },
+    {
+      "nombre": "dvdvq",
+      "precio": 12,
+      "id": 22
+    },
+    {
+      "nombre": "dvdvq",
+      "precio": 12,
+      "id": 23
     }
   ]
 }

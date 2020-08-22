@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { crearNuevoProductoAction } from '../actions/productoActions';
 
 //!Redux
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 const ProductoNuevo = () => {
 
     const [ nombre, guardarNombre ] = useState('');
@@ -12,7 +12,7 @@ const ProductoNuevo = () => {
     const dispatch = useDispatch();
     
     //!Funcion que ejecuta el dispatch para mandar a llamar la funcion del Action.
-    const agregarProducto = (producto) => dispatch(crearNuevoProductoAction(producto));
+    const agregarProducto = (producto) => dispatch( crearNuevoProductoAction(producto) );
 
     const submitNuevoProducto = (e) => {
         e.preventDefault();

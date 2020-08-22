@@ -94,7 +94,7 @@
 
 .tabla {
     background-color: #28bc5e;
-    width: 100%;
+    width: 80%;
     text-align: left;
     margin: 0 auto;
 }
@@ -103,6 +103,10 @@
     background-color: #15cf59;
     line-height: 2.5;
     text-align: center;
+}
+
+.tablaHead > tr > td {
+    text-transform: uppercase;
 }
 
 .contenedorProductos {
@@ -117,3 +121,43 @@
     font-size: small;
     color: #4925cc;
 }
+
+tr, td {
+    border: solid 1px #000000;
+    
+}
+
+tr > td > span {
+    font-weight: bolder;
+}
+.acciones, .precio {
+    text-align: center;
+}
+
+.btn-editar {
+    background-color: #008080;
+}
+
+.btn-eliminar {
+    background-color: #ff4500;
+    color: #000000;
+    font-weight: bolder;
+    margin-right: 5px;
+}
+
+.btn-editar, .btn-eliminar {
+    padding: 4px 20px;
+    margin: 0;
+    border: none;
+    border-radius: 3px;
+    margin: 3px;
+}
+
+.btn-editar:hover {
+    background-color: #00a0a0 ;
+}
+
+.btn-eliminar:hover {
+    background-color: #cc3700 ;
+}
+

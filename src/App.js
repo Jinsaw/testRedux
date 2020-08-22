@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Header from './components/Header';
 import Productos from './components/Productos';
 import ProductoNuevo from './components/ProductoNuevo';
-import styled from 'styled-components';
+import EditarProducto from './components/EditarProducto';
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route
 } from 'react-router-dom';
 
-//REDUX
+//!Redux
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -23,6 +23,7 @@ const App = () => {
 					<Switch>
 						<Route exact path = "/" component= {Productos} />
 						<Route exact path = "/productos/nuevo" component= {ProductoNuevo} />
+						<Route exact path = "/productos/editar/:id" component= {EditarProducto} />
 					</Switch>
 				</div>
 			</Provider>
