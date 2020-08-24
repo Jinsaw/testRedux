@@ -10,6 +10,8 @@ import {
     COMENZAR_EDICION_PRODUCTO,
     PRODUCTO_EDITADO_EXITO,
     PRODUCTO_EDITADO_ERROR,
+    BUSQUEDA_EXITOSA,
+    BUSQUEDA_ERROR
 } from '../types/';
 import Swal from 'sweetalert2';
 import clienteAxios from '../config/axios';
@@ -140,4 +142,25 @@ const eliminarProductoExito = () => ({
 
 const eliminarProductoError = () => ({
     type: PRODUCTO_ELIMINADO_ERROR
+})
+
+export function buscarLetraAction(busqueda) {
+    return (dispatch) => {
+        try {
+            dispatch( mostrarFraseBusqueda(busqueda));
+        } catch (error) {
+            console.log(error);
+            dispatch( errorBusqueda());
+        }
+    }
+}
+
+const mostrarFraseBusqueda = (busqueda) => ({
+    type: BUSQUEDA_EXITOSA,
+    payload: busqueda
+})
+
+const errorBusqueda = () => ({
+    type: BUSQUEDA_ERROR,
+    payload : true
 })

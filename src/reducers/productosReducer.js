@@ -8,15 +8,20 @@ import {
     PRODUCTO_ELIMINADO_ERROR,
     PRODUCTO_EDITADO_EXITO,
     PRODUCTO_EDITADO_ERROR,
-    OBTENER_PRODUCTO_ELIMINAR
+    OBTENER_PRODUCTO_ELIMINAR,
+    BUSQUEDA_EXITOSA,
+    BUSQUEDA_ERROR
 } from '../types/';
+import Producto from '../components/Producto';
 
 const initialState = {
     productos: [],
     error: null,
     loading: false,
     productoeditar: null,
-    productoeliminar: null
+    productoeliminar: null,
+    busqueda: '',
+    resultados: '',
 }
 
 export default function(state = initialState, action) {
@@ -59,6 +64,16 @@ export default function(state = initialState, action) {
                     producto.id ===! state.productoeliminar),
                 productoeliminar: null
             }
+        case BUSQUEDA_EXITOSA:
+            return {
+                ...state,
+                error: false,
+                busqueda: action.payload,
+                resultados: state.productos.filter( producto =>
+                    producto.nombre.includes(state.busqueda)
+                    )
+                }
+        case BUSQUEDA_ERROR:
         case DESCARGAR_PRODUCTO_ERROR:
         case AGREGAR_PRODUCTO_ERROR:
         case PRODUCTO_EDITADO_ERROR:

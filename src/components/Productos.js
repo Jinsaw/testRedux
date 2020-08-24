@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { descargaProductosAction } from '../actions/productoActions';
 
 const Productos = () => {
-
     const dispatch = useDispatch();
     
     useEffect(()=>{
@@ -19,7 +18,8 @@ const Productos = () => {
     //!Obtenemos los datos del state (productos)
     //!Como es un array se debe recorrer para poder mostrar
     const productos = useSelector( state => state.productos.productos); 
-
+    const resultados = useSelector( state => state.productos.resultados);
+    
     return ( 
         <div className= "contenedorProductos">
             <div className= "contenedorTitulo">
@@ -33,9 +33,16 @@ const Productos = () => {
                         <td>Acciones</td>
                     </tr>
                 </thead>
-                <tbody className= "tablaBody">
-                    { productos.length === 0 ? 'No hay productos para mostrar' : (
+                    <tbody className= "tablaBody">
+                    { resultados.length === 0 ? (
                         productos.map( producto => (
+                            <Producto
+                                key= {producto.id}
+                                producto= {producto}
+                            />
+                        ))
+                    ) : (
+                        resultados.map( producto => (
                             <Producto
                                 key= {producto.id}
                                 producto= {producto}

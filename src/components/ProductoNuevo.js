@@ -53,7 +53,7 @@ const ProductoNuevo = () => {
             >
                 <div className= "contenedorSecundario">
                     <label>Nombre del producto</label>
-                   
+
                     <input
                         autoFocus
                         id= "nombre"
@@ -66,7 +66,7 @@ const ProductoNuevo = () => {
                 </div>
                 <div className= "contenedorSecundario">
                     <label>Precio</label>
-                   
+
                     <input
                         type= "number"
                         name= "precio"
