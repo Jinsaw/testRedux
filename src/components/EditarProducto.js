@@ -46,7 +46,7 @@ const EditarProducto = () => {
             >
                 <div className= "contenedorSecundario">
                     <label>Nombre del producto</label>
-                   
+
                     <input
                         type= "text"
                         name= "nombre"
@@ -57,7 +57,7 @@ const EditarProducto = () => {
                 </div>
                 <div className= "contenedorSecundario">
                     <label>Precio Producto</label>
-                   
+
                     <input
                         type= "number"
                         name= "precio"
@@ -72,7 +72,7 @@ const EditarProducto = () => {
                 >Guardar Cambios</button>
             </form>
         </div>
-     );
+    );
 }
- 
+
 export default EditarProducto;

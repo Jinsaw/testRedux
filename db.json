@@ -1,17 +1,12 @@
 {
   "productos": [
     {
-      "nombre": "Camote",
-      "precio": 33,
-      "id": 27
-    },
-    {
-      "nombre": "Frijol",
+      "nombre": "frijol",
       "precio": 30,
       "id": 29
     },
     {
-      "nombre": "Girasol",
+      "nombre": "girasol",
       "precio": 30,
       "id": 30
     },
@@ -49,6 +44,16 @@
       "nombre": "Ajos",
       "precio": 25,
       "id": 37
+    },
+    {
+      "nombre": "frijoles",
+      "precio": 120,
+      "id": 38
+    },
+    {
+      "nombre": "fajitas",
+      "precio": 130,
+      "id": 39
     }
   ]
 }

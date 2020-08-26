@@ -22,6 +22,7 @@ const initialState = {
     productoeliminar: null,
     busqueda: '',
     resultados: '',
+    cantresultados: null,
 }
 
 export default function(state = initialState, action) {
@@ -71,7 +72,10 @@ export default function(state = initialState, action) {
                 busqueda: action.payload,
                 resultados: state.productos.filter( producto =>
                     producto.nombre.includes(state.busqueda)
-                    )
+                    ),
+                cantresultados: state.resultados === 0 ? 
+                    'No hay resultados' : 
+                    `Se encontraron ${state.resultados.length} resultados`
                 }
         case BUSQUEDA_ERROR:
         case DESCARGAR_PRODUCTO_ERROR:
