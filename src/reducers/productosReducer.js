@@ -12,7 +12,6 @@ import {
     BUSQUEDA_EXITOSA,
     BUSQUEDA_ERROR
 } from '../types/';
-import Producto from '../components/Producto';
 
 const initialState = {
     productos: [],
@@ -21,8 +20,8 @@ const initialState = {
     productoeditar: null,
     productoeliminar: null,
     busqueda: '',
-    resultados: '',
-    cantresultados: null,
+    resultados: [],
+    errorbusqueda: null,
 }
 
 export default function(state = initialState, action) {
@@ -68,16 +67,19 @@ export default function(state = initialState, action) {
         case BUSQUEDA_EXITOSA:
             return {
                 ...state,
-                error: false,
+                error: false,   
                 busqueda: action.payload,
                 resultados: state.productos.filter( producto =>
-                    producto.nombre.includes(state.busqueda)
-                    ),
-                cantresultados: state.resultados === 0 ? 
-                    'No hay resultados' : 
-                    `Se encontraron ${state.resultados.length} resultados`
+                    producto.nombre.includes(action.payload)
+                    )
                 }
         case BUSQUEDA_ERROR:
+            return {
+                ...state,
+                errorbusqueda: (state.resultados === 0) ? 
+                    (`No se encontraron resultados para: ${action.payload}`) :
+                    null
+            }
         case DESCARGAR_PRODUCTO_ERROR:
         case AGREGAR_PRODUCTO_ERROR:
         case PRODUCTO_EDITADO_ERROR:

@@ -1,21 +1,6 @@
 {
   "productos": [
     {
-      "nombre": "frijol",
-      "precio": 30,
-      "id": 29
-    },
-    {
-      "nombre": "girasol",
-      "precio": 30,
-      "id": 30
-    },
-    {
-      "nombre": "Lupa",
-      "precio": 300,
-      "id": 31
-    },
-    {
       "nombre": "Lupas",
       "precio": "700",
       "id": 32
@@ -54,6 +39,11 @@
       "nombre": "fajitas",
       "precio": 130,
       "id": 39
+    },
+    {
+      "nombre": "Vod",
+      "precio": 130,
+      "id": 40
     }
   ]
 }

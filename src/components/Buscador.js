@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react';
 
 //!Redux
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { buscarLetraAction } from '../actions/productoActions';
 
 const Buscador = () => {
@@ -11,7 +11,7 @@ const Buscador = () => {
 
     const resultadoBusqueda = (busqueda) => dispatch( buscarLetraAction(busqueda));
     resultadoBusqueda(busqueda);
-    console.log(resultadoBusqueda);
+    
     return ( 
         <Fragment>
             <input 

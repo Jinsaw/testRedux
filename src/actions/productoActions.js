@@ -145,12 +145,12 @@ const eliminarProductoError = () => ({
 })
 
 export function buscarLetraAction(busqueda) {
-    return (dispatch) => {
+    return async (dispatch) => {
         try {
             dispatch( mostrarFraseBusqueda(busqueda));
         } catch (error) {
             console.log(error);
-            dispatch( errorBusqueda());
+            dispatch( errorBusqueda(busqueda));
         }
     }
 }
@@ -160,7 +160,7 @@ const mostrarFraseBusqueda = (busqueda) => ({
     payload: busqueda
 })
 
-const errorBusqueda = () => ({
+const errorBusqueda = (busqueda) => ({
     type: BUSQUEDA_ERROR,
-    payload : true
+    payload: busqueda
 })
